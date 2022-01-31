@@ -1,0 +1,52 @@
+
+{% extends 'accounts/base2.html' %}
+
+{% load static %}
+
+
+
+{% block  body_block %}
+
+    <section class="details">
+            <div class="container-details">
+
+                <div class="contents-grid">
+
+                    <div class="image-container">
+                        <img src="{{ object.image.url }}"  class="responsive"/>
+                    </div>
+
+                    <div class="container-details">
+                        <h3>{{ object.name }}</h3>
+                        <div class="dct">
+                            <p><i class="icon ion-md-person"></i>  5 seater</p>
+                            <p> <i class="icon fa fa-car"></i> 4 doors</p>
+                            <p>${{ object.daily_rent }} / day</p>
+                        </div>
+                        <br>
+                        <br>
+                        <p><i class="icon ion-md-pin pin "></i> Pick-up and Drop-off Mliman City</p>
+
+                        <form class="booking-form" method="POST">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+
+                            <input type="submit" name="" id="" value="Place Booking"  class="btn"/>
+
+                        </form>
+
+<!--                        <a href="{% url 'booking' car_pk=object.pk %}" class="btn"> Place Booking </a>-->
+
+
+
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+
+
+{% endblock %}
+

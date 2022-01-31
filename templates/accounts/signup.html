@@ -1,0 +1,21 @@
+{% extends 'accounts/base.html' %}
+{% load static %}
+
+
+    {% block  body_block %}
+
+          <div class="register-container">
+              <form class="register-form" method="POST">
+
+                  {% csrf_token %}
+                  {{ form.as_p }}
+
+                  <input type="submit" value="Sign up" class=" btn">
+                  <a href="#" class="btn login-link">login</a>
+              </form>
+          </div>
+
+
+
+
+    {% endblock %}
